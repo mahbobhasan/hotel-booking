@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import Booking from "../models/Booking";
 import Room from "../models/Room";
-import mongoose  from "mongoose";
 
 export const createBooking = async (req: Request, res: Response) => {
     try {

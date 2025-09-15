@@ -5,6 +5,12 @@ import { error } from "console";
 
 export const createRoom = async (req: Request, res: Response) => {
     try {
+        const {roomNo}=req.body
+        const existingRoom = await Room.findOne({ roomNo });
+
+        if (existingRoom) {
+        return res.status(400).json({ error: "Room number already exists" });
+        }
         const room = new Room(req.body);
         await room.save();
         res.status(201).json(room)
