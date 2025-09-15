@@ -19,8 +19,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* Information Section */}
       <section className="flex-1 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-lg shadow text-center">
@@ -43,8 +41,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
       <footer className="bg-gray-800 text-gray-200 py-6 text-center">
         <p>&copy; {new Date().getFullYear()} Hotel Booking System. All rights reserved.</p>
       </footer>

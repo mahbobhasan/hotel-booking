@@ -18,11 +18,11 @@ export default function EditRoom(){
   const nav = useNavigate()
 
   useEffect(()=>{
-    api.fetchRooms().then(data => {
-      const rooms=data.rooms
-      const found = rooms.find(r => r._id === id)
-      console.log(found)
-      if (found) setRoom(found)
+    api.fetchRoom(id).then(data => {
+      const rooms = data
+      console.log(rooms)
+      
+      if(rooms) setRoom(rooms)
     })
   }, [id])
   if (!room) return <div>Loading…</div>
@@ -46,8 +46,6 @@ export default function EditRoom(){
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold mb-4">Edit Room</h1>
-      <EditRoomForm initial={room} onSubmit={handleSubmit} />
       {success && (
         <div className="mb-4 p-3 rounded bg-green-100 text-green-700">
           Room successfully updated!
@@ -58,6 +56,8 @@ export default function EditRoom(){
           Something went wrong. {errorMsg}
         </div>
       )}
+      <EditRoomForm initial={room} onSubmit={handleSubmit} />
+      
     </div>
   )
 }

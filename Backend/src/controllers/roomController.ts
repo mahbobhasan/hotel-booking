@@ -23,7 +23,7 @@ export const createRoom = async (req: Request, res: Response) => {
 export const getRooms = async (req: Request, res: Response) => {
     try {
         const page: number= parseInt(req.query.page as string) || 1
-        const limit: number = 10;
+        const limit: number = 6;
         const skip :number= (page - 1)*limit;
         const rooms = await Room.find().skip(skip).limit(limit);
         const total: number = await Room.countDocuments();

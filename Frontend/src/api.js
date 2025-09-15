@@ -1,7 +1,7 @@
 const API_BASE = 'http://localhost:5000/api'
 
-export async function fetchRooms() {
-  const r = await fetch(`${API_BASE}/rooms`)
+export async function fetchRooms(page=1) {
+  const r = await fetch(`${API_BASE}/rooms?page=${page}`)
   return r.json()
 }
 
