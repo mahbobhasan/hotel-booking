@@ -42,6 +42,7 @@ export const getRooms = async (req: Request, res: Response) => {
 export const getRoomDetails = async (req: Request, res: Response) => {
     try {
         const room = await Room.findById(req.params.id);
+        console.log(room)
         if (!room) {
             return res.status(404).json({error:"Room not found"})
         }
@@ -54,6 +55,7 @@ export const getRoomDetails = async (req: Request, res: Response) => {
 };
 export const updateRoom = async (req: Request, res: Response)=> {
     try {
+        
         const room = await Room.findByIdAndUpdate(req.params.id, req.body, { new: true })
         if (!room) return res.status(404).json({ "error": "Room not found" })
         res.json(room);

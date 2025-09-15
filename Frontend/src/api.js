@@ -5,6 +5,11 @@ export async function fetchRooms() {
   return r.json()
 }
 
+export async function fetchRoom(id) {
+  const r = await fetch(`${API_BASE}/rooms/${id}`)
+  return r.json()
+}
+
 export async function createRoom(payload) {
   const r = await fetch(`${API_BASE}/rooms`, {
     method: 'POST',

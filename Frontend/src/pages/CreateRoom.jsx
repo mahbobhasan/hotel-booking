@@ -16,10 +16,12 @@ export default function CreateRoom(){
     const res = await api.createRoom(values)
     if (!res.error) {
       setSuccess(true);
+      setError(false)
     }
     else {
       console.log(res.error)
       setError(true)
+      setSuccess(false)
       setErrorMsg(res.error)
     }
   }

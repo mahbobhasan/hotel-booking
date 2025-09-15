@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-export default function RoomForm({  onSubmit }) {
+export default function EditRoomForm({ initial={}, onSubmit }) {
   
   const [formData, setFormData] = useState({
     roomNo: "",
@@ -11,9 +11,9 @@ export default function RoomForm({  onSubmit }) {
     available: true,
   })
   
-  // useEffect(() => {
-  //   setFormData(initial)
-  // },[initial])
+  useEffect(() => {
+    setFormData(initial)
+  },[initial])
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -33,18 +33,9 @@ export default function RoomForm({  onSubmit }) {
       onSubmit={handleSubmit}
       className="bg-white shadow rounded-lg p-6 space-y-4"
     >
-      <div>
-        <label className="block font-medium">Room No</label>
-        <input
-          type="text"
-          name="roomNo"
-          value={formData.roomNo}
-          onChange={handleChange}
-          className="w-full border rounded px-3 py-2"
-          required
-        />
-      </div>
-
+          <div className="block font-medium text-center  w-1/2 border rounded px-3 py-2 mx-auto">
+              Room No: {formData.roomNo}
+          </div>  
       <div>
         <label className="block font-medium">Type</label>
         <input

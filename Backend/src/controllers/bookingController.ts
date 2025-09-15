@@ -5,9 +5,10 @@ import Room from "../models/Room";
 export const createBooking = async (req: Request, res: Response) => {
     try {
         const { guestName, roomId, nights, checkInDate } = req.body;
+        console.log(req.body)
         console.log(roomId)
         const roomDoc = await Room.findById(roomId);
-        console.log(roomDoc);
+        // console.log(roomDoc);
         if (!roomDoc) {
             return res.status(404).json({error:"Room not found"})
         }
