@@ -78,3 +78,20 @@ PORT=5000
 ```bash
 npm run dev
 ```
+## Frontend Setup
+### 1. Install dependencies
+```bash
+cd frontend
+npm install
+```
+### 2. Run the frontend
+```bash
+npm run dev
+```
+## 🛠️ Tech Stack
+
+- Frontend → React, Vite, TailwindCSS, React Router
+
+- Backend → Express, TypeScript, MongoDB, Mongoose
+
+- Dev Tools → ts-node-dev, dotenv, cors
